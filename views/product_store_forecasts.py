@@ -147,13 +147,13 @@ def render(
                 fc_values = forecast_df[forecast_col].values
                 fc_dates = forecast_df[date_col].values
 
-                if n_test > 0:
+                if test_actuals is not None and test_preds is not None and len(test_actuals) > 0:
                     res_std = float(np.std(test_actuals - test_preds))
                 else:
                     res_std = float(fc_values.std()) * 0.2
 
                 upper_fc = fc_values + 1.96 * res_std
-                lower_fc = fc_values - 1.96 * res_std
+                lower_fc = np.maximum(0, fc_values - 1.96 * res_std)
 
                 fig_fc = go.Figure()
                 fig_fc.add_trace(
