@@ -46,6 +46,9 @@ def render(
                 return 0.0
             return (base_val - model_val) / base_val * 100
 
+        def metric_delta_color(improvement):
+            return "normal" if improvement >= 0 else "inverse"
+
         c1, c2, c3 = st.columns(3)
         with c1:
             imp = pct_improvement(mae, bl_mae)
@@ -53,7 +56,7 @@ def render(
                 "MAE",
                 f"{mae:,.4f}",
                 delta=f"{imp:+.1f}% vs baseline",
-                delta_color="inverse",
+                delta_color=metric_delta_color(imp),
             )
             st.caption(f"Baseline MAE: {bl_mae:,.4f}")
         with c2:
@@ -62,7 +65,7 @@ def render(
                 "RMSE",
                 f"{rmse:,.4f}",
                 delta=f"{imp:+.1f}% vs baseline",
-                delta_color="inverse",
+                delta_color=metric_delta_color(imp),
             )
             st.caption(f"Baseline RMSE: {bl_rmse:,.4f}")
         with c3:
@@ -71,7 +74,7 @@ def render(
                 "MAPE",
                 f"{mape:,.2f}%",
                 delta=f"{imp:+.1f}% vs baseline",
-                delta_color="inverse",
+                delta_color=metric_delta_color(imp),
             )
             st.caption(f"Baseline MAPE: {bl_mape:,.2f}%")
 

@@ -38,6 +38,10 @@ def render(
             st.warning("No data available for the selected Store / Product combination.")
             return
 
+        if len(subset) < 29:
+            st.warning("At least 29 days of historical data are required for forecasting this Store / Product combination.")
+            return
+
         # ── Chart 1: Historical demand trajectory ──────────────────────
         st.subheader("Historical Demand Trajectory")
         fig_hist = px.line(
@@ -131,14 +135,16 @@ def render(
                 "Test period overlay is being generated..."
             )
 
-        # ── Chart 3: 30-day forward forecast ──────────────────────────
-        st.subheader("30-Day Forward Forecast")
+        # ── Chart 3: forward forecast ─────────────────────────────────
+        forecast_horizon = st.selectbox("Forecast Horizon (days)", [7, 30], index=0)
+        st.subheader(f"{forecast_horizon}-Day Forward Forecast")
         try:
-            forecast_df = generate_forecast(model, subset, horizon_days=30)
+            forecast_df = generate_forecast(model, subset, horizon_days=forecast_horizon)
 
             if forecast_df is not None and not forecast_df.empty:
-                forecast_col = (
-                    "Forecast" if "Forecast" in forecast_df.columns else forecast_df.columns[-1]
+                forecast_col = next(
+                    (column for column in ("Forecast", "Forecast_Demand") if column in forecast_df.columns),
+                    forecast_df.columns[-1],
                 )
                 date_col = (
                     "Date" if "Date" in forecast_df.columns else forecast_df.columns[0]
@@ -188,7 +194,7 @@ def render(
                 )
                 st.plotly_chart(fig_fc, use_container_width=True)
 
-                st.subheader("Forecast Values (Next 30 Days)")
+                st.subheader(f"Forecast Values (Next {forecast_horizon} Days)")
                 st.dataframe(
                     forecast_df.reset_index(drop=True).style.format(
                         {forecast_col: "{:.2f}"}

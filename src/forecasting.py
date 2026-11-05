@@ -224,6 +224,7 @@ def train_model(
     baseline_metrics = {
         "MAE":  round(float(mean_absolute_error(y_test, naive_pred)), 2),
         "RMSE": round(float(np.sqrt(mean_squared_error(y_test, naive_pred))), 2),
+        "MAPE": get_model_metrics(y_test, naive_pred)["MAPE"],
     }
 
     test_df_out = test_df[["Date", "Store ID", "Product ID", "Demand"]].copy()
