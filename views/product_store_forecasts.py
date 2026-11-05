@@ -185,7 +185,7 @@ def render(
                     )
                 )
                 fig_fc.update_layout(
-                    title=f"30-Day Forecast — {selected_store} / {selected_product}",
+                    title=f"{forecast_horizon}-Day Forecast — {selected_store} / {selected_product}",
                     template="plotly_white",
                     xaxis_title="Date",
                     yaxis_title="Forecasted Demand",
@@ -204,7 +204,7 @@ def render(
             else:
                 st.warning("Forecast generation returned no data.")
         except Exception as fc_err:
-            st.error(f"Could not generate 30-day forecast: {fc_err}")
+            st.error(f"Could not generate {forecast_horizon}-day forecast: {fc_err}")
 
     except Exception as e:
         st.error(f"Error rendering Product/Store Forecasts: {e}")
