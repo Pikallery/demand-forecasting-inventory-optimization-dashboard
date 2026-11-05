@@ -1,6 +1,6 @@
 # 📊 Demand Forecasting & Inventory Optimization Dashboard
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/new?repository=Pikallery/demand-forecasting-inventory-optimization-dashboard&branch=main&mainModule=app.py)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pikallery-demand-forecasting-inventory-optimization--app-j7el4t.streamlit.app/)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -9,15 +9,13 @@ An end-to-end interactive decision-support system and machine learning prototype
 
 ---
 
-## 🚀 Live Demo & Deployment
+## 🌐 Live Application & Project Links
 
-Deploy directly to **Streamlit Community Cloud** (Free 24/7 Hosting):
-[![Deploy to Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/new?repository=Pikallery/demand-forecasting-inventory-optimization-dashboard&branch=main&mainModule=app.py)
-
-1. Click the badge above (or navigate to [share.streamlit.io](https://share.streamlit.io)).
-2. Connect your GitHub account.
-3. Select repository: `Pikallery/demand-forecasting-inventory-optimization-dashboard`, branch: `main`, file: `app.py`.
-4. Click **Deploy!**
+- **🚀 Live Interactive Dashboard**: **[Demand Forecasting & Inventory Optimization Dashboard · Streamlit](https://pikallery-demand-forecasting-inventory-optimization--app-j7el4t.streamlit.app/)**
+- **💻 Standalone Dashboard Repository**: [Pikallery/demand-forecasting-inventory-optimization-dashboard](https://github.com/Pikallery/demand-forecasting-inventory-optimization-dashboard)
+- **👥 Team Collaborative Repository**: [prajwalkumargrti-collab/demand-forecasting-inventory-optimization](https://github.com/prajwalkumargrti-collab/demand-forecasting-inventory-optimization)
+- **🔀 Team Pull Request (Role 5)**: [Pull Request #1 on Team Repo](https://github.com/prajwalkumargrti-collab/demand-forecasting-inventory-optimization/pull/1)
+- **📦 Team Inventory Module Reference**: [Kotipallipujitha-29/Optimization.py](https://github.com/Kotipallipujitha-29/Optimization.py)
 
 ---
 
